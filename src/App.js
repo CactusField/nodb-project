@@ -33,9 +33,24 @@ catchDogs(dogs) {
   .catch(err => console.log(err));
 }
 
-editName = () =>{
+editName = (message, name) =>{
+  var main = {name: name};
 
+  axios.put(`/api/bought-dogs/${message}`, main)
+  .then(res => {
+    this.setState({boughtDogs: res.data});
+  })
+  .catch(err => console.log(err));
 }
+
+sellDog = () =>{
+  axios.delete(`/api/bought-dogs/${message}`)
+  .then(res =>{
+    this.setState({boughtDogs: res.data});
+  })
+  .catch(err => console.log(err));
+}
+
 
 render(){
   return (

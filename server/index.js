@@ -1,7 +1,7 @@
 const express = require('express');
 const ctrlstray = require('./controllers/ctrlstray');
 const ctrlpark = require('./controllers/ctrlpark'); 
-const { default: axios } = require('axios');
+const axios = require('axios');
 const app = express();
 app.use(express.json());
 
@@ -12,6 +12,8 @@ app.use('/api/stray-dogs', ctrlstray.getstrayDog)
 //ctrlpark
 app.get('/api/bought-dogs', ctrlpark.getBoughtDogs);
 app.post('/api/bought-dogs', ctrlpark.catchDogs);
+app.put('/api/bought-dogs/:message', ctrlpark.editName);
+app.delete('/api/bought-dogs/:message', ctrlpark.sellDog);
 //ctrlpark
 
 const port = 4000;
