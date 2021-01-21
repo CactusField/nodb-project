@@ -4,7 +4,7 @@ import Dogpark from './Dogpark';
 
 
 
-class Dogpound extends Coponent {
+class Dogpound extends Component {
     constructor(props){
         super(props);
         this.state = {
